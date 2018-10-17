@@ -15,6 +15,6 @@ const unsigned int TEXT_SIZE =		50;
 //Snake parameters
 size_t STARTING_LENGTH =		6;
 const coord SEGMENT_SIZE =		30;
-const coord SEGMENT_OFFSET =	0;
+const coord SEGMENT_OFFSET =	-2;
 const coord STARTING_COORD_X =	WINDOW_WIDTH / 2;
 const coord STARTING_COORD_Y =	WINDOW_HEIGHT / 2;

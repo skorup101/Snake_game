@@ -63,6 +63,8 @@ private:
 		sf::RectangleShape ratGraphic(sf::Vector2f(SEGMENT_SIZE, SEGMENT_SIZE));
 		ratGraphic.setPosition(x, y);
 		ratGraphic.setFillColor(sf::Color::Green);
+		ratGraphic.setOutlineColor(sf::Color::Black);
+		ratGraphic.setOutlineThickness(SEGMENT_OFFSET);
 		target.draw(ratGraphic);
 	}
 	coord x;
@@ -76,7 +78,7 @@ public:
 	Snake() : currentDirection(Up)
 	{
 		for (unsigned i = 0; i < STARTING_LENGTH; ++i) {
-			snakeBody.push_back(SnakeSegment(STARTING_COORD_X, STARTING_COORD_Y + (SEGMENT_SIZE + SEGMENT_OFFSET) * i));
+			snakeBody.push_back(SnakeSegment(STARTING_COORD_X, STARTING_COORD_Y + SEGMENT_SIZE * i));
 		}
 	}
 	~Snake() override {
@@ -150,6 +152,8 @@ private:
 							sf::RectangleShape segmentGraphic(sf::Vector2f(SEGMENT_SIZE, SEGMENT_SIZE));
 							segmentGraphic.setPosition(segment.getX(), segment.getY());
 							segmentGraphic.setFillColor(sf::Color::Green); //make color swapper
+							segmentGraphic.setOutlineColor(sf::Color::Black);
+							segmentGraphic.setOutlineThickness(SEGMENT_OFFSET);
 							target.draw(segmentGraphic);
 						}
 		);
@@ -157,10 +161,10 @@ private:
 
 	SnakeSegment nextSegment() const {
 		switch (currentDirection) {
-		case Up:	return SnakeSegment(getHead().getX(), getHead().getY() - (SEGMENT_SIZE + SEGMENT_OFFSET));	break;
-		case Down:	return SnakeSegment(getHead().getX(), getHead().getY() + (SEGMENT_SIZE + SEGMENT_OFFSET));	break;
-		case Right:	return SnakeSegment(getHead().getX() + (SEGMENT_SIZE + SEGMENT_OFFSET), getHead().getY());	break;
-		case Left:	return SnakeSegment(getHead().getX() - (SEGMENT_SIZE + SEGMENT_OFFSET), getHead().getY());	break;
+		case Up:	return SnakeSegment(getHead().getX(), getHead().getY() - SEGMENT_SIZE);	break;
+		case Down:	return SnakeSegment(getHead().getX(), getHead().getY() + SEGMENT_SIZE);	break;
+		case Right:	return SnakeSegment(getHead().getX() + SEGMENT_SIZE, getHead().getY());	break;
+		case Left:	return SnakeSegment(getHead().getX() - SEGMENT_SIZE, getHead().getY());	break;
 		default:	return SnakeSegment(1, 1);																	break;
 		}
 	}
