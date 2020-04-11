@@ -7,10 +7,7 @@ public:
 	Game()
 		: ratPosGen(rat, snake), window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), WINDOW_NAME)
 	{ //clean it up there is also Rat.h file in git to remove or refactor whole game to headers
-		if (!font.loadFromFile(FONT_PATH))
-		{
-			font.loadFromFile(FONT_PATH_ARIAL);
-		}
+		font.loadFromFile(FONT_PATH);
 		gameOverMsg.setCharacterSize(TEXT_SIZE);
 		gameOverMsg.setFont(font);
 		gameOverMsg.setPosition(STARTING_COORD_X - 200, STARTING_COORD_Y - TEXT_SIZE);

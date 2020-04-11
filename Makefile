@@ -36,7 +36,7 @@ $(BIN): $(BINDIR) $(OBJS)
 $(BINDIR):
 	mkdir -p $(BINDIR)
 
-$(OBJS): $(OBJDIR) $(SRC)
+$(OBJS): $(OBJDIR) $(SRC) $(INCLDIR)/*
 	$(CXX) $(CXXFLAGS) -c $(SRC) -o $(OBJS)
 
 $(OBJDIR):
