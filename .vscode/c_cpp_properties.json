@@ -4,15 +4,11 @@
             "name": "Linux",
             "defines": [],
             "compilerPath": "/usr/bin/g++",
+            "includePath": ["${workspaceFolder}"],
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64",
-            "compileCommands": "${workspaceFolder}/compile_commands.json",
-            "browse": {
-                "path": ["${workspaceFolder}"],
-                "limitSymbolsToIncludedHeaders": false,
-                "databaseFilename": ""
-              }
+            "compileCommands": "${workspaceFolder}/compile_commands.json"
         }
     ],
     "version": 4

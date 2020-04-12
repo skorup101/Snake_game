@@ -6,6 +6,7 @@
         "typeinfo": "cpp",
         "fstream": "cpp",
         "algorithm": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "iostream": "cpp"
     }
 }
